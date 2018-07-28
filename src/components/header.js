@@ -5,16 +5,16 @@ import React, { Component } from 'react';
 ver si son necesarios o requeridas o simplemente se pueden mandar como nulas*/
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
+import Car from './car';
 // Assets
 import logo from '../logo.svg';
 import '../css/header.css';
-
 class Header extends Component {
   static propTypes = {
     title: PropTypes.string,
     items: PropTypes.array.isRequired
   };
+ 
   render() {
     //console.log(this.props);
     const{ title = "Juan's films", items } = this.props;
@@ -27,16 +27,22 @@ class Header extends Component {
           <img src={logo} alt="logo" />
           <h2 className="App-title">{title}</h2>
 
-          <ul className = "Menu">
+          <ul className = "Menu" >
 
             {items && items.map(
               (items, key)=> <li key = { key }>
-                <Link to = {items.url}>{items.title}</Link>
+                <a href="" class="boton_2" >
+                  <Link to = {items.url}>{items.title}</Link>
+                </a>
               </li>
               )
             }
           
           </ul>
+          <td> <a href="" class="boton_2" >
+            <Link to = "/car">Car</Link>
+          </a></td>
+
         </header>
       </div>
     );
