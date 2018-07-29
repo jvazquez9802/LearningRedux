@@ -1,24 +1,34 @@
 //Dependencies
 import React, { Component } from 'react';
-import RomanceFilms from '../data/romance_films.js';
 import Movie from './movie';
+import {bindActionCreators} from 'react-redux';
+import {connect} from 'react-redux';
 
 class Romance extends Component {
+    createListMovies(){
+        return this.props.Rfilm.map((film) =>{
+            return(
+                <div>
+                    <h4> Romance movies</h4>
+                    <li key = { film.id }>
+                        <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
+                    </li>
+                </div>
+            );
+        });
+    }
     render() {
-        const ROMANCE = RomanceFilms;
         return(
             <div className = "Romance">
-            <h3> Romance movies</h3>
-                <p className = "Romance" >
-                    {ROMANCE && ROMANCE.map(
-                    (ROMANCE, key)=> <li key = { key }>
-                        <Movie title = {ROMANCE.title} img = {ROMANCE.img} plot = {ROMANCE.plot} director = {ROMANCE.director}/>
-                    </li>
-                    )
-                    }
-                </p>
+                {this.createListMovies()}
             </div>
         );
     }
 }
-export default Romance;
+function mapStateToProps(state){
+    return{
+        Rfilm: state.Afilm
+    }
+}
+
+export default connect(mapStateToProps)(Romance);

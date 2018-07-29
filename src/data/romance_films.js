@@ -1,4 +1,5 @@
-const romancefilms = [
+export default function(){ 
+    return[
          {
              id:1,
              title: "Forever My Girl",
@@ -23,5 +24,4 @@ const romancefilms = [
              img: "https://upload.wikimedia.org/wikipedia/en/e/ee/Adrift_%282018_film%29.png"
          }
      ];
-
-     export default romancefilms;
+    }

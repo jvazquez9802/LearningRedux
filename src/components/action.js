@@ -1,24 +1,35 @@
 //Dependencies
 import React, { Component } from 'react';
-import ActionFilms from '../data/action_films.js';
 import Movie from './movie';
+import {bindActionCreators} from 'react-redux';
+import {connect} from 'react-redux';
 
 class Action extends Component {
+    createListMovies(){
+        return this.props.Afilm.map((film) =>{
+            return(
+                <div>
+                    <h4> Action movies</h4>
+                    <li key = { film.id }>
+                        <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
+                    </li>
+                </div>
+            );
+        });
+    }
+
     render() {
-        const ACTION = ActionFilms;
         return(
             <div className = "Action">
-            <h3> Action movies</h3>
-                <p className = "Action" >
-                    {ACTION && ACTION.map(
-                    (ACTION, key)=> <li key = { key }>
-                        <Movie title = {ACTION.title} img = {ACTION.img} plot = {ACTION.plot} director = {ACTION.director}/>
-                    </li>
-                    )
-                    }
-                </p>
+                {this.createListMovies()}
             </div>
         );
     }
 }
-export default Action;
+function mapStateToProps(state){
+    return{
+        Afilm: state.Afilm
+    }
+}
+
+export default connect(mapStateToProps)(Action);

@@ -1,4 +1,5 @@
-const terrorfilms = [
+export default function() { 
+    return[
         {
             id:1,
             title: "The Witch",
@@ -26,6 +27,4 @@ const terrorfilms = [
             img: "https://upload.wikimedia.org/wikipedia/en/f/f9/Slender_Man_%282018%29_poster.jpg"
 
         }
-    ];
-
-    export default terrorfilms;
+    ]}

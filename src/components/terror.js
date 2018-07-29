@@ -1,25 +1,39 @@
 //Dependencies
 import React, { Component } from 'react';
-import TerrorFilms from '../data/terror_films';
 import Movie from './movie';
+import {bindActionCreators} from 'react-redux';
+import {connect} from 'react-redux';
+
+
 
 class Terror extends Component {
+    
+    createListMovies(){
+        return this.props.Tfilm.map((film) =>{
+            return(
+                <div>
+                    <h4> Terror movies</h4>
+                    <li key = { film.id }>
+                        <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
+                    </li>
+                </div>
+            );
+        });
+    }
+
     render() {
-        const TERROR = TerrorFilms;
         return(
             <div className = "Terror">
-            <h4> Terror movies</h4>
-                <p className = "TerrorMovies" >
-                    {TERROR && TERROR.map(
-                    (TERROR, key)=> <li key = { key }>
-                        <Movie title = {TERROR.title} img = {TERROR.img} plot = {TERROR.plot} director = {TERROR.director}/>
-                    </li>
-                    )
-                    }
-                </p>
+            {this.createListMovies()}
             </div>
         );
     }
 }
+function mapStateToProps(state){
+    return{
+        Tfilm: state.Tfilm
+    }
+}
 
-export default Terror;
+
+export default connect(mapStateToProps)(Terror);

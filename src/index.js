@@ -8,11 +8,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes';
 
 import {createStore} from 'redux';
+import allData from './data/movies_reducer';
 /*
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
-import allReducers from './reducers';
+
 */
 
 /*const logger = createLogger();
@@ -23,9 +24,9 @@ const store = createStore(
 
 
 */
-//const store = createStore();
+const store = createStore(allData);
 render(
-<Provider>
+<Provider store = {store}>
     <Router>
         <AppRoutes/>
     </Router>
