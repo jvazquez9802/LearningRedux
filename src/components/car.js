@@ -6,31 +6,13 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 class Car extends Component {
       
-    createListProducts(){
-        return this.props.Tfilm.map((film) =>{
-            return(
-                <div>
-                    <h4> Your buys</h4>
-                    <li key = { film.id }>
-                        <Product title = {film.title} img = {film.img} plot/>
-                    </li>
-                </div>
-            );
-        });
-    }
-
     render() {
         return(
             <div className = "Product">
-                {this.createListProducts()}
+                <p>I'm the car</p>
             </div>
         );
     }
 }
-function mapStateToProps(state){
-    return{
-        Rfilm: state.Afilm
-    }
-}
 
-export default connect(mapStateToProps)(Car);
+export default Car;

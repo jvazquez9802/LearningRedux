@@ -12,6 +12,7 @@ class Romance extends Component {
                     
                     <li key = { film.id }>
                         <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
+                        <button>Add to car</button>
                     </li>
                 </div>
             );

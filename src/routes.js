@@ -14,7 +14,7 @@ import Car from './components/car';
 const AppRoutes = () =>
 <App>
     <Switch>
-        <Route exact path = "/terror" component = {terror} />
+        <Route exact path = "/horror" component = {terror} />
         <Route exact path = "/romance" component = {Romance} />
         <Route exact path = "/action" component = {Action} />
         <Route exact path = "/" component = {Home} />

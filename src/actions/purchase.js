@@ -1,7 +1,7 @@
-export const purchaseTmovie = (Tfilm) =>{
-
+export const purchaseMovie = (movie) =>{
+    console.log("PURCHASE A MOVIE", movie.title);
     return{
-        Type: "TERROR_PURCHASE",
-        payload: Tfilm
+        Type: "MOVIE_PURCHASE",
+        payload: movie
     }
 };
