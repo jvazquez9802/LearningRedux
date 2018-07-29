@@ -1,7 +1,7 @@
 //Dependencies
 import React, { Component } from 'react';
 import Movie from './movie';
-import {bindActionCreators} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 class Action extends Component {
@@ -9,7 +9,6 @@ class Action extends Component {
         return this.props.Afilm.map((film) =>{
             return(
                 <div>
-                    <h4> Action movies</h4>
                     <li key = { film.id }>
                         <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
                     </li>
@@ -21,6 +20,7 @@ class Action extends Component {
     render() {
         return(
             <div className = "Action">
+                <h4> Action movies</h4>
                 {this.createListMovies()}
             </div>
         );

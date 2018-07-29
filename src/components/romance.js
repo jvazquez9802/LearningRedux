@@ -9,7 +9,7 @@ class Romance extends Component {
         return this.props.Rfilm.map((film) =>{
             return(
                 <div>
-                    <h4> Romance movies</h4>
+                    
                     <li key = { film.id }>
                         <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
                     </li>
@@ -20,6 +20,7 @@ class Romance extends Component {
     render() {
         return(
             <div className = "Romance">
+                <h4> Romance movies</h4>
                 {this.createListMovies()}
             </div>
         );
@@ -27,7 +28,7 @@ class Romance extends Component {
 }
 function mapStateToProps(state){
     return{
-        Rfilm: state.Afilm
+        Rfilm: state.Rfilm
     }
 }
 

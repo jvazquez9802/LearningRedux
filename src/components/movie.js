@@ -1,6 +1,9 @@
 //Dependencies
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {purchaseTmovie} from '../actions/purchase';
 
 
 class Movie extends Component {
@@ -25,6 +28,11 @@ class Movie extends Component {
                 <h5>Directed by: {director}</h5>
             </div>
         );
+    }
+}
+function mapStateToProps(state){
+    return{
+        Tfilm: state.Tfilm
     }
 }
 
