@@ -6,7 +6,7 @@ class Home extends Component {
     render() {
         return(
             <div className = "Home">
-                <h4> Welcome to my website, you will watch your favorite terror, action and Romance fils here</h4>
+                <h4> Welcome to my website, you will buy your favorite terror, action and Romance fils here</h4>
                 <img src = {image}/>
             </div>
         );

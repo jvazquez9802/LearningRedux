@@ -7,7 +7,7 @@ class Car extends Component {
     render() {
         return(
             <div className = "Car">
-               <h1>soy el carro</h1>
+               <h4>Your car</h4>
             </div>
         );
     }
