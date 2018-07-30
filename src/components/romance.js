@@ -1,9 +1,9 @@
 //Dependencies
 import React, { Component } from 'react';
 import Movie from './movie';
-import {bindActionCreators} from 'redux';
+//import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {purchaseMovie} from '../actions/purchase';
+import purchaseMovie from '../actions/purchase';
 
 class Romance extends Component {
 
@@ -13,7 +13,7 @@ class Romance extends Component {
                 <div key = { film.id }>
                     <li>
                         <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
-                        <button type="button" onClick= {this.props.purchaseMovie(film)} >Add to car</button>
+                        <button type="button" onClick={() => purchaseMovie(film)} >Add to car</button>
                     </li>
                 </div>
             );
@@ -29,13 +29,6 @@ class Romance extends Component {
         );
     }
 }
-function mapStateToProps(state){
-    return{
-        Rfilm: state.Rfilm
-    }
-}
-function matchDispatchToProps(dispatch){
-    return bindActionCreators({purchaseMovie: purchaseMovie}, dispatch)
-}
-
-export default connect(mapStateToProps, matchDispatchToProps)(Romance);
+let RomanceConectado= Romance
+RomanceConectado = connect(state => ({ Rfilm: state.Rfilm }), {purchaseMovie})(RomanceConectado)
+export default RomanceConectado

@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import '../css/car.css';
 import Product from "./car_product";
-import {connect} from 'react-redux';
 
 class Car extends Component {
       
