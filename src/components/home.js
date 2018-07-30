@@ -7,7 +7,7 @@ class Home extends Component {
         return(
             <div className = "Home">
                 <h4> Welcome to my website, where you can buy your favorite horror, action and Romance films</h4>
-                <img src = {image}/>
+                <img src = {image} alt = "home"/>
             </div>
         );
     }

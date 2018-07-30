@@ -5,15 +5,13 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {purchaseMovie} from '../actions/purchase';
 
-
-
 class Terror extends Component {
     
     createListMovies(){
         return this.props.Tfilm.map((film) =>{
             return(
-                <div>
-                    <li key = { film.id }>
+                <div key = { film.id }>
+                    <li>
                         <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director} category = {film.category}/>
                         <button type="button" onClick= {() => purchaseMovie(film)} >Add to car</button>
                     </li>
@@ -25,8 +23,8 @@ class Terror extends Component {
     render() {
         return(
             <div className = "Terror">
-            <h4> Horror movies</h4>
-            {this.createListMovies()}
+                <h4> Horror movies</h4>
+                {this.createListMovies()}
             </div>
         );
     }
@@ -39,6 +37,5 @@ function mapStateToProps(state){
 function matchDispatchToProps(dispatch){
     return bindActionCreators({purchaseMovie: purchaseMovie}, dispatch)
 }
-
 
 export default connect(mapStateToProps, matchDispatchToProps)(Terror);

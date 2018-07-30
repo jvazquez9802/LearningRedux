@@ -1,27 +1,27 @@
 //Dependencies
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 
 class Product extends Component {
-    static propTypes = {
-        title: PropTypes.string.isRequired,
-        img: PropTypes.string.isRequired
-      };
+
     render() {
-        const{ title, img } = this.props;
+        if(!this.props.SoldMovie){
+            return (<h3>you don't have movies on your kar</h3>);
+        }
         return(
-            <div className = "Product">
-                <p>Title: {title}</p>
-                <p>
-                    <img src = {img} width = "100px"/>
-                        <p>
-                            
-                        </p>
-                </p>
+            <div>
+                <h4>{this.props.SoldMovie.title}</h4>
+                <img src ={this.props.SoldMovie.img} width = "100px" alt = {this.props.SoldMovie.title}/>
             </div>
         );
     }
 }
 
-export default Product;
+function mapStateToProps(state){
+    return{
+        SoldMovie: state.SoldMovie
+    };
+}
+
+export default connect(mapStateToProps)(Product);

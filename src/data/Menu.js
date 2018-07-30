@@ -1,27 +1,27 @@
 export default function(){
     return[
     {
-        id:10,
+        id:1,
         title: 'Home',
         url: '/'
     },
     {
-        id:11,
+        id:2,
         title: 'Horror',
         url: '/horror'
     },
     {
-        id: 12,
+        id:3,
         title: 'Romance',
         url: '/romance'
     },
     {
-        id: 13,
+        id:4,
         title: 'Action',
         url: '/action'
     },
     {
-        id: 14,
+        id:5,
         title: 'Car',
         url: '/car'
     }

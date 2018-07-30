@@ -6,7 +6,6 @@ import './App.css';
 import Header from "./components/header";
 import Content from "./components/content";
 //data
-import Car from "./components/car";
 class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired

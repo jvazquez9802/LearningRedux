@@ -14,7 +14,7 @@ class Header extends Component {
   RouterButtons(){
     return this.props.Main.map((menu) =>{
         return(
-            <div>
+            <div key = {menu.id}>
                 <Link to={menu.url}>
                     <button type="button">{menu.title}</button>
                 </Link>
