@@ -12,8 +12,8 @@ class Terror extends Component {
             return(
                 <div key = { film.id }>
                     <li>
-                        <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director} category = {film.category}/>
-                        <button type="button" onClick= {() => purchaseMovie(film)} >Add to car</button>
+                        <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director} />
+                        <button type="button" onClick= {This.props.funcname(purchaseMovie(film))} >Add to car</button>
                     </li>
                 </div>
             );
