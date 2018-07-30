@@ -13,7 +13,7 @@ class Romance extends Component {
                 <div key = { film.id }>
                     <li>
                         <Movie title = {film.title} img = {film.img} plot = {film.plot} director = {film.director}/>
-                        <button type="button" onClick= {This.props.funcname(purchaseMovie(film))} >Add to car</button>
+                        <button type="button" onClick= {This.props.purchaseMovie(film)} >Add to car</button>
                     </li>
                 </div>
             );
