@@ -17,11 +17,15 @@ export default function(state = {}, action){
     */
 
     //eL Object.asig es crear un nuevo ojeto al cual le el state del original para crear una pinche copia, en este caso es la pelicula la cual compre
+    console.log(action.type);
     switch(action.type){
+        
         case "MOVIE_PURCHASE":
-        return Object.assign({}, state, {
+        let NewAssign =  Object.assign({}, state, {
             movies: Object.assign({}, state.movies, action.payload)
           })
+          console.log(NewAssign);
+        return NewAssign
         default:
           return state;
       }

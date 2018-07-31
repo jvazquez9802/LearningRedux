@@ -1,11 +1,13 @@
 //Dependencies
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import purchaseMovie from '../actions/purchase';
 
 
 class Product extends Component {
 
     render() {
+        console.log(this.props)
         if(!this.props.SoldMovie){
             return (<h3>you don't have movies on your kar</h3>);
         }
@@ -18,10 +20,6 @@ class Product extends Component {
     }
 }
 
-function mapStateToProps(state){
-    return{
-        SoldMovie: state.SoldMovie
-    };
-}
-
-export default connect(mapStateToProps)(Product);
+let ProductConectado= Product
+ProductConectado = connect(state => ({ SoldMovie: state.SoldMovie }), {purchaseMovie})(ProductConectado)
+export default ProductConectado
